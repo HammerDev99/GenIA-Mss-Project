@@ -1,0 +1,7 @@
+id,nombre,tipo,tasa_estandar_eur_h,tasa_extra_eur_h,cap_max_pct,costo_uso_eur
+1,Project Manager,trabajo,14,16,100,
+2,Programador VR,trabajo,15,17,300,
+3,Animador 3D,trabajo,12,14,100,
+4,Modelador y texturizador 3D,trabajo,12,14,100,
+5,Investigador UX,trabajo,12,14,100,
+6,Oculus Quest,material,,,,50

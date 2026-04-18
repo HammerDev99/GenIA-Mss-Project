@@ -1,0 +1,22 @@
+tarea_id,recurso_id,unidades_pct,nota
+3,1,100,PM lidera recolección de requerimientos
+3,5,100,Investigador UX
+4,2,100,Programador VR construye prototipo
+4,3,100,Animador 3D
+4,4,100,Modelador y texturizador 3D
+4,6,,1 uso del Oculus Quest (material)
+5,1,100,PM define alcance
+5,5,100,Investigador UX
+7,4,100,Modelador y texturizador 3D
+8,4,100,Modelador y texturizador 3D
+9,3,100,Animador 3D
+10,2,300,3 programadores VR en paralelo (tarea Duración fija)
+12,1,100,PM supervisa tests
+12,5,100,Investigador UX ejecuta tests
+13,1,100,PM evalúa resultados
+13,5,100,Investigador UX
+14,2,100,Programador VR acciones correctivas
+14,4,100,Modelador correctivas
+14,3,100,Animador correctivas
+16,1,100,PM aprueba proyecto
+17,1,100,PM archiva documentación
