@@ -1,0 +1,21 @@
+# Microsoft Project artifacts (regenerables desde el XML)
+*.mpp
+*.mpt
+~$*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
