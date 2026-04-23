@@ -125,10 +125,9 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
     Project descarta silenciosamente los que llegan fuera de turno (en
     particular PredecessorLink, lo que rompía el encadenamiento).
 
-    Orden relevante (subset, omitiendo campos que MS Project calcula):
-      UID, ID, Name, Type, IsNull, WBS, OutlineNumber, OutlineLevel,
-      Priority, Duration, DurationFormat, Summary, ConstraintType,
-      CalendarUID, PredecessorLink*, Active, Manual.
+    Incluimos también los elementos "housekeeping" que Project espera
+    ver (Stop, Resume, EffortDriven, Milestone, PercentComplete, etc.)
+    sin los cuales su motor de scheduling no recalcula bien.
     """
     tasks_el = sub(root, "Tasks")
     for t in tareas:
@@ -140,10 +139,17 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
         sub(task_el, "Name", t["nombre"])
         sub(task_el, "Type", TASK_TYPE[t["tipo_tarea"]])
         sub(task_el, "IsNull", 0)
+        sub(task_el, "CreateDate", START_DATE)
         sub(task_el, "WBS", t["wbs"])
         sub(task_el, "OutlineNumber", t["wbs"])
         sub(task_el, "OutlineLevel", t["nivel"])
         sub(task_el, "Priority", 500)
+        # Start/Finish: se emiten como hints. Con ConstraintType=0 (ASAP)
+        # Project los trata como valores iniciales y los recalcula según
+        # predecesoras + calendario. Sin Start/Finish en el XML, Project
+        # no arranca el motor de autoschedule y deja todo en parallel.
+        sub(task_el, "Start", START_DATE)
+        sub(task_el, "Finish", START_DATE)
         if not is_summary and t["duracion_dias"]:
             dur = iso_duration_from_days(float(t["duracion_dias"]))
             sub(task_el, "Duration", dur)
@@ -151,11 +157,38 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
             # NOTA: no emitimos <Work> a nivel <Task>. Project lo calcula
             # como suma del trabajo de las asignaciones; emitirlo aquí
             # creaba conflicto con assignment.Work y rompía Duración fija.
+        sub(task_el, "Stop", "NA")
+        sub(task_el, "Resume", "NA")
+        sub(task_el, "ResumeValid", 0)
+        # EffortDriven=0: no reducir duración al agregar recursos.
+        # Clave para Prototipo (3 recursos al 100%) y para que 1.2.4
+        # Duración fija mantenga sus 30 días con Programador VR[300%].
+        sub(task_el, "EffortDriven", 0)
+        sub(task_el, "Recurring", 0)
+        sub(task_el, "OverAllocated", 0)
+        sub(task_el, "Estimated", 0)
+        sub(task_el, "Milestone", 0)
         sub(task_el, "Summary", 1 if is_summary else 0)
-        # ConstraintType=0 -> "Lo antes posible" (ASAP). Sin esto, MS
-        # Project interpretaba dates implícitas como restricción.
+        sub(task_el, "Critical", 0)
+        sub(task_el, "IsSubproject", 0)
+        sub(task_el, "IsSubprojectReadOnly", 0)
+        sub(task_el, "ExternalTask", 0)
+        sub(task_el, "FixedCost", 0)
+        sub(task_el, "FixedCostAccrual", 3)
+        sub(task_el, "PercentComplete", 0)
+        sub(task_el, "PercentWorkComplete", 0)
+        sub(task_el, "Cost", 0)
+        sub(task_el, "OvertimeCost", 0)
+        sub(task_el, "OvertimeWork", "PT0H0M0S")
+        # ConstraintType=0 -> "Lo antes posible" (ASAP).
         sub(task_el, "ConstraintType", 0)
         sub(task_el, "CalendarUID", -1)  # -1 = usa calendario del proyecto
+        sub(task_el, "LevelAssignments", 1)
+        sub(task_el, "LevelingCanSplit", 1)
+        sub(task_el, "LevelingDelay", 0)
+        sub(task_el, "LevelingDelayFormat", 7)
+        sub(task_el, "HideBar", 0)
+        sub(task_el, "Rollup", 0)
         if t["predecesora_id"]:
             link = sub(task_el, "PredecessorLink")
             sub(link, "PredecessorUID", int(t["predecesora_id"]))
@@ -164,6 +197,7 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
             lag_min = int(round(lag_dias * MINUTES_PER_DAY))
             sub(link, "LinkLag", lag_min * 10)  # décimas de minuto
             sub(link, "LagFormat", 7)  # días
+            sub(link, "CrossProject", 0)
         sub(task_el, "Active", 1)
         sub(task_el, "Manual", 0)  # 0 = autoprogramado
 
