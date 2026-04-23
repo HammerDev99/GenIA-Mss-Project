@@ -261,8 +261,7 @@
       <OutlineNumber>1</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1</WBS>
@@ -278,8 +277,7 @@
       <OutlineNumber>1.1</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.1</WBS>
@@ -295,8 +293,7 @@
       <OutlineNumber>1.1.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.1.1</WBS>
@@ -315,8 +312,7 @@
       <OutlineNumber>1.1.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.1.2</WBS>
@@ -341,8 +337,7 @@
       <OutlineNumber>1.1.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.1.3</WBS>
@@ -367,8 +362,7 @@
       <OutlineNumber>1.2</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.2</WBS>
@@ -384,8 +378,7 @@
       <OutlineNumber>1.2.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.2.1</WBS>
@@ -410,8 +403,7 @@
       <OutlineNumber>1.2.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.2.2</WBS>
@@ -436,8 +428,7 @@
       <OutlineNumber>1.2.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.2.3</WBS>
@@ -462,8 +453,7 @@
       <OutlineNumber>1.2.4</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.2.4</WBS>
@@ -488,8 +478,7 @@
       <OutlineNumber>1.3</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.3</WBS>
@@ -505,8 +494,7 @@
       <OutlineNumber>1.3.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.3.1</WBS>
@@ -531,8 +519,7 @@
       <OutlineNumber>1.3.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.3.2</WBS>
@@ -557,8 +544,7 @@
       <OutlineNumber>1.3.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.3.3</WBS>
@@ -583,8 +569,7 @@
       <OutlineNumber>1.4</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.4</WBS>
@@ -600,8 +585,7 @@
       <OutlineNumber>1.4.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.4.1</WBS>
@@ -626,8 +610,7 @@
       <OutlineNumber>1.4.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <Start>2020-09-02T08:00:00</Start>
-      <Finish>2020-09-02T08:00:00</Finish>
+      <ConstraintType>0</ConstraintType>
       <Manual>0</Manual>
       <CalendarUID>-1</CalendarUID>
       <WBS>1.4.2</WBS>

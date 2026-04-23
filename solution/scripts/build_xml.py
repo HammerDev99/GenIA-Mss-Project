@@ -132,8 +132,10 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
         sub(task_el, "OutlineNumber", t["wbs"])
         sub(task_el, "OutlineLevel", t["nivel"])
         sub(task_el, "Priority", 500)
-        sub(task_el, "Start", START_DATE)
-        sub(task_el, "Finish", START_DATE)
+        # ConstraintType=0 -> "Lo antes posible" (ASAP). Clave: sin esto,
+        # MS Project interpreta <Start> como restricción "No comenzar antes
+        # del..." y rompe la programación por predecesoras.
+        sub(task_el, "ConstraintType", 0)
         sub(task_el, "Manual", 0)  # autoprogramado
         sub(task_el, "CalendarUID", -1)  # usa calendario de proyecto
         sub(task_el, "WBS", t["wbs"])
