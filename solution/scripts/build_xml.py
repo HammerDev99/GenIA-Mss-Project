@@ -119,6 +119,17 @@ def build_calendars(root: ET.Element, festivos: list[dict]) -> None:
 
 
 def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
+    """Emite <Task> en el orden CANÓNICO del esquema MS Project XML.
+
+    El esquema usa xs:sequence: si los elementos no están en orden, MS
+    Project descarta silenciosamente los que llegan fuera de turno (en
+    particular PredecessorLink, lo que rompía el encadenamiento).
+
+    Orden relevante (subset, omitiendo campos que MS Project calcula):
+      UID, ID, Name, Type, IsNull, WBS, OutlineNumber, OutlineLevel,
+      Priority, Duration, DurationFormat, Summary, ConstraintType,
+      CalendarUID, PredecessorLink*, Active, Manual.
+    """
     tasks_el = sub(root, "Tasks")
     for t in tareas:
         task_uid = int(t["id"])
@@ -129,31 +140,32 @@ def build_tasks(root: ET.Element, tareas: list[dict]) -> None:
         sub(task_el, "Name", t["nombre"])
         sub(task_el, "Type", TASK_TYPE[t["tipo_tarea"]])
         sub(task_el, "IsNull", 0)
+        sub(task_el, "WBS", t["wbs"])
         sub(task_el, "OutlineNumber", t["wbs"])
         sub(task_el, "OutlineLevel", t["nivel"])
         sub(task_el, "Priority", 500)
-        # ConstraintType=0 -> "Lo antes posible" (ASAP). Clave: sin esto,
-        # MS Project interpreta <Start> como restricción "No comenzar antes
-        # del..." y rompe la programación por predecesoras.
-        sub(task_el, "ConstraintType", 0)
-        sub(task_el, "Manual", 0)  # autoprogramado
-        sub(task_el, "CalendarUID", -1)  # usa calendario de proyecto
-        sub(task_el, "WBS", t["wbs"])
-        sub(task_el, "Active", 1)
-        sub(task_el, "Summary", 1 if is_summary else 0)
         if not is_summary and t["duracion_dias"]:
             dur = iso_duration_from_days(float(t["duracion_dias"]))
             sub(task_el, "Duration", dur)
             sub(task_el, "DurationFormat", 7)  # 7 = días
-            sub(task_el, "Work", dur)
+            # NOTA: no emitimos <Work> a nivel <Task>. Project lo calcula
+            # como suma del trabajo de las asignaciones; emitirlo aquí
+            # creaba conflicto con assignment.Work y rompía Duración fija.
+        sub(task_el, "Summary", 1 if is_summary else 0)
+        # ConstraintType=0 -> "Lo antes posible" (ASAP). Sin esto, MS
+        # Project interpretaba dates implícitas como restricción.
+        sub(task_el, "ConstraintType", 0)
+        sub(task_el, "CalendarUID", -1)  # -1 = usa calendario del proyecto
         if t["predecesora_id"]:
             link = sub(task_el, "PredecessorLink")
             sub(link, "PredecessorUID", int(t["predecesora_id"]))
             sub(link, "Type", LINK_TYPE[t["tipo_dep"]])
             lag_dias = float(t["lag_dias"] or 0)
             lag_min = int(round(lag_dias * MINUTES_PER_DAY))
-            sub(link, "LinkLag", lag_min * 10)  # LinkLag en décimas de minuto
+            sub(link, "LinkLag", lag_min * 10)  # décimas de minuto
             sub(link, "LagFormat", 7)  # días
+        sub(task_el, "Active", 1)
+        sub(task_el, "Manual", 0)  # 0 = autoprogramado
 
 
 def build_resources(root: ET.Element, recursos: list[dict]) -> None:
@@ -186,20 +198,33 @@ def build_assignments(
     root: ET.Element,
     asignaciones: list[dict],
     tareas_by_id: dict[int, dict],
+    recursos_by_id: dict[int, dict],
 ) -> None:
     asg_parent = sub(root, "Assignments")
     for idx, a in enumerate(asignaciones, start=1):
         tarea_id = int(a["tarea_id"])
+        recurso_id = int(a["recurso_id"])
         tarea = tareas_by_id[tarea_id]
+        recurso = recursos_by_id[recurso_id]
+        es_material = recurso["tipo"].strip().lower() == "material"
         unidades_raw = a["unidades_pct"].strip() if a["unidades_pct"] else ""
-        units = float(unidades_raw) / 100.0 if unidades_raw else 1.0
-        horas = float(tarea["duracion_dias"]) * HOURS_PER_DAY * units if tarea["duracion_dias"] else 0
+
+        if es_material:
+            # Para material, Units = cantidad consumida (1 uso por defecto).
+            # No se emite Work en horas — Project no lo espera para material.
+            units = float(unidades_raw) if unidades_raw else 1.0
+            horas = 0.0
+        else:
+            units = float(unidades_raw) / 100.0 if unidades_raw else 1.0
+            duracion = float(tarea["duracion_dias"]) if tarea["duracion_dias"] else 0
+            horas = duracion * HOURS_PER_DAY * units
+
         asg = sub(asg_parent, "Assignment")
         sub(asg, "UID", idx)
         sub(asg, "TaskUID", tarea_id)
-        sub(asg, "ResourceUID", int(a["recurso_id"]))
+        sub(asg, "ResourceUID", recurso_id)
         sub(asg, "Units", f"{units:.6f}")
-        if horas:
+        if horas > 0:
             sub(asg, "Work", f"PT{int(round(horas))}H0M0S")
 
 
@@ -241,7 +266,8 @@ def build_project(tareas, recursos, asignaciones, festivos) -> ET.ElementTree:
     build_tasks(root, tareas)
     build_resources(root, recursos)
     tareas_by_id = {int(t["id"]): t for t in tareas}
-    build_assignments(root, asignaciones, tareas_by_id)
+    recursos_by_id = {int(r["id"]): r for r in recursos}
+    build_assignments(root, asignaciones, tareas_by_id, recursos_by_id)
 
     return ET.ElementTree(root)
 

@@ -258,15 +258,15 @@
       <Name>Proyecto VR - Aplicación de Realidad Virtual</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1</WBS>
       <OutlineNumber>1</OutlineNumber>
       <OutlineLevel>1</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1</WBS>
-      <Active>1</Active>
       <Summary>1</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>2</UID>
@@ -274,15 +274,15 @@
       <Name>Concepto</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.1</WBS>
       <OutlineNumber>1.1</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.1</WBS>
-      <Active>1</Active>
       <Summary>1</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>3</UID>
@@ -290,18 +290,17 @@
       <Name>Recolección de requerimientos</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.1.1</WBS>
       <OutlineNumber>1.1.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.1.1</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT56H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT56H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>4</UID>
@@ -309,24 +308,23 @@
       <Name>Prototipo</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.1.2</WBS>
       <OutlineNumber>1.1.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.1.2</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT120H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT120H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>3</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>5</UID>
@@ -334,24 +332,23 @@
       <Name>Definición del alcance</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.1.3</WBS>
       <OutlineNumber>1.1.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.1.3</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT56H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT56H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>4</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>6</UID>
@@ -359,15 +356,15 @@
       <Name>Desarrollo</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.2</WBS>
       <OutlineNumber>1.2</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.2</WBS>
-      <Active>1</Active>
       <Summary>1</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>7</UID>
@@ -375,24 +372,23 @@
       <Name>Modelado</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.2.1</WBS>
       <OutlineNumber>1.2.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.2.1</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT120H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT120H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>5</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>8</UID>
@@ -400,24 +396,23 @@
       <Name>Texturizado e iluminación</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.2.2</WBS>
       <OutlineNumber>1.2.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.2.2</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT80H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT80H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>7</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>9</UID>
@@ -425,24 +420,23 @@
       <Name>Animaciones</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.2.3</WBS>
       <OutlineNumber>1.2.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.2.3</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT200H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT200H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>8</PredecessorUID>
         <Type>3</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>10</UID>
@@ -450,24 +444,23 @@
       <Name>Desarrollo de código</Name>
       <Type>1</Type>
       <IsNull>0</IsNull>
+      <WBS>1.2.4</WBS>
       <OutlineNumber>1.2.4</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.2.4</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT240H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT240H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>9</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>11</UID>
@@ -475,15 +468,15 @@
       <Name>Testeo</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.3</WBS>
       <OutlineNumber>1.3</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.3</WBS>
-      <Active>1</Active>
       <Summary>1</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>12</UID>
@@ -491,24 +484,23 @@
       <Name>Tests</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.3.1</WBS>
       <OutlineNumber>1.3.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.3.1</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT112H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT112H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>10</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>13</UID>
@@ -516,24 +508,23 @@
       <Name>Evaluación de resultados</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.3.2</WBS>
       <OutlineNumber>1.3.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.3.2</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT40H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT40H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>12</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>14</UID>
@@ -541,24 +532,23 @@
       <Name>Acciones correctivas</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.3.3</WBS>
       <OutlineNumber>1.3.3</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.3.3</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT120H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT120H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>13</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>15</UID>
@@ -566,15 +556,15 @@
       <Name>Cierre</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.4</WBS>
       <OutlineNumber>1.4</OutlineNumber>
       <OutlineLevel>2</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.4</WBS>
-      <Active>1</Active>
       <Summary>1</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>16</UID>
@@ -582,24 +572,23 @@
       <Name>Aprobación del proyecto</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.4.1</WBS>
       <OutlineNumber>1.4.1</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.4.1</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT40H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT40H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>14</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
     <Task>
       <UID>17</UID>
@@ -607,24 +596,23 @@
       <Name>Archivo de documentación</Name>
       <Type>0</Type>
       <IsNull>0</IsNull>
+      <WBS>1.4.2</WBS>
       <OutlineNumber>1.4.2</OutlineNumber>
       <OutlineLevel>3</OutlineLevel>
       <Priority>500</Priority>
-      <ConstraintType>0</ConstraintType>
-      <Manual>0</Manual>
-      <CalendarUID>-1</CalendarUID>
-      <WBS>1.4.2</WBS>
-      <Active>1</Active>
-      <Summary>0</Summary>
       <Duration>PT40H0M0S</Duration>
       <DurationFormat>7</DurationFormat>
-      <Work>PT40H0M0S</Work>
+      <Summary>0</Summary>
+      <ConstraintType>0</ConstraintType>
+      <CalendarUID>-1</CalendarUID>
       <PredecessorLink>
         <PredecessorUID>16</PredecessorUID>
         <Type>1</Type>
         <LinkLag>0</LinkLag>
         <LagFormat>7</LagFormat>
       </PredecessorLink>
+      <Active>1</Active>
+      <Manual>0</Manual>
     </Task>
   </Tasks>
   <Resources>
@@ -750,7 +738,6 @@
       <TaskUID>4</TaskUID>
       <ResourceUID>6</ResourceUID>
       <Units>1.000000</Units>
-      <Work>PT120H0M0S</Work>
     </Assignment>
     <Assignment>
       <UID>7</UID>
