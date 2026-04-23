@@ -236,7 +236,9 @@ def build_project(tareas, recursos, asignaciones, festivos) -> ET.ElementTree:
     sub(root, "Manager", PROJECT_MANAGER)
     sub(root, "ScheduleFromStart", 1)
     sub(root, "StartDate", START_DATE)
-    sub(root, "FinishDate", START_DATE)  # Project lo recalcula
+    # NO emitir <FinishDate>. Si se emite igual a StartDate, Project lo
+    # trata como fecha fin obligatoria del proyecto y comprime/solapa
+    # todas las tareas (Desarrollo cae a 1 día, Programador VR[9000%]).
     sub(root, "FYStartDate", 1)
     sub(root, "CriticalSlackLimit", 0)
     sub(root, "CurrencyDigits", 2)

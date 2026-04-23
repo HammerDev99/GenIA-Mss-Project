@@ -6,7 +6,6 @@
   <Manager>Project Manager</Manager>
   <ScheduleFromStart>1</ScheduleFromStart>
   <StartDate>2020-09-02T08:00:00</StartDate>
-  <FinishDate>2020-09-02T08:00:00</FinishDate>
   <FYStartDate>1</FYStartDate>
   <CriticalSlackLimit>0</CriticalSlackLimit>
   <CurrencyDigits>2</CurrencyDigits>
